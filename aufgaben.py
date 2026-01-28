@@ -68,11 +68,11 @@ def aufgabe_010_teile_worte(text: str) -> list[str]:
     pass
 
 
+
 # Zugewiesen: crazyhome77
 def aufgabe_011_verbinde_worte(worte: list[str], trenner: str = ", ") -> str:
     """Verbinde Wörter mit dem angegebenen Trenner zu einem String."""
-    pass
-
+    return trenner.join(worte)
 
 # Zugewiesen: crazyhome77
 def aufgabe_012_laengstes_wort(worte: list[str]) -> Optional[str]:
