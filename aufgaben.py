@@ -11,7 +11,8 @@ from typing import Any, Optional
 # Zugewiesen: 84edu
 def aufgabe_001_spiegle_text(text: str) -> str:
     """Gib den Text rückwärts zurück."""
-    pass
+    reverse_str = "".join(reversed(text))
+    return reverse_str
 
 
 # Zugewiesen: 84edu
