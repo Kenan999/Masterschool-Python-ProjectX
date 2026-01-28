@@ -18,7 +18,8 @@ def aufgabe_001_spiegle_text(text: str) -> str:
 # Zugewiesen: 84edu
 def aufgabe_002_zaehle_vokale(text: str) -> int:
     """Zähle die Anzahl der Vokale im Text (a, e, i, o, u)."""
-    pass
+    vocals = [l for l in text if l in "aeiou"]
+    return vocals
 
 
 # Zugewiesen: 84edu
