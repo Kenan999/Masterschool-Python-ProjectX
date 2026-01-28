@@ -9,7 +9,7 @@ Schleifen, einfache Mathematik und saubere Funktionalität.
 - **84edu**: Funktionen 001–010 (`aufgabe_001` bis `aufgabe_010`)
 - **crazyhome77**: Funktionen 011–020 (`aufgabe_011` bis `aufgabe_020`)
 - **hallochupi-sketch**: Funktionen 021–030 (`aufgabe_021` bis `aufgabe_030`)
-- **jess-compliance-dev**: Funktionen 031–040 (`aufgabe_031` bis `aufgabe_040`)
+- **jess-compliance-dev**: Funktionen  (`aufgabe_031` bis `aufgabe_040`)
 - **Kenan999**: Funktionen 041–050 (`aufgabe_041` bis `aufgabe_050`)
 - **lgoik90-progfrog**: Funktionen 051–060 (`aufgabe_051` bis `aufgabe_060`)
 - **NorbertFabian65**: Funktionen 061–070 (`aufgabe_061` bis `aufgabe_070`)

@@ -193,62 +193,75 @@ def aufgabe_030_flatten(liste_von_listen: list[list[int]]) -> list[int]:
 # Zugewiesen: jess-compliance-dev
 def aufgabe_031_merge_lists(a: list[int], b: list[int]) -> list[int]:
     """Mische zwei Listen abwechselnd (falls ungleich lang, Rest anhängen)."""
-    pass
-
+    result = []
+    for i in range(max(len(a), len(b))):
+        if i < len(a):
+            result.append(a[i])
+        if i < len(b):
+            result.append(b[i])
+    return result
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_032_remove_none(werte: list[Optional[int]]) -> list[int]:
     """Entferne alle None-Werte aus der Liste."""
-    pass
-
+    return [w for w in werte if w is not None]
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_033_chunk_list(werte: list[int], groesse: int) -> list[list[int]]:
     """Zerlege die Liste in Blöcke der Länge groesse."""
-    pass
-
+    return [werte[i:i+groesse] for i in range(0, len(werte), groesse)]
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_034_rotate_left(werte: list[int], schritte: int) -> list[int]:
     """Rotiert die Liste um schritte nach links."""
-    pass
-
+    n = len(werte)
+    if n == 0:
+        return []
+    schritte %= n
+    return werte[schritte:] + werte[:schritte]
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_035_split_even_odd(werte: list[int]) -> tuple[list[int], list[int]]:
     """Trenne die Liste in gerade und ungerade Zahlen auf."""
-    pass
-
+    gerade = [x for x in werte if x % 2 == 0]
+    ungerade = [x for x in werte if x % 2 != 0]
+    return gerade, ungerade
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_036_dict_keys_sort(data: dict[str, int]) -> list[str]:
     """Gib sortierte Schlüssel eines Dicts zurück."""
-    pass
-
+    return sorted(data.keys())
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_037_dict_values_sum(data: dict[str, int]) -> int:
     """Summiere alle Werte in einem Dict."""
-    pass
-
+    return sum(data.values())
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_038_invert_dict(data: dict[str, str]) -> dict[str, str]:
     """Tausche Schlüssel und Werte (Fehler bei Duplikaten klären)."""
-    pass
-
+    inverted = {}
+    for k, v in data.items():
+        if v in inverted:
+            raise ValueError(f"Doppelte Werte: {v}")
+        inverted[v] = k
+    return inverted
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_039_merge_dicts(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
     """Führe zwei Dicts zusammen, b überschreibt a bei Konflikten."""
-    pass
-
+    merged = a.copy()
+    merged.update(b)
+    return merged
 
 # Zugewiesen: jess-compliance-dev
 def aufgabe_040_count_letters(text: str) -> dict[str, int]:
     """Zähle, wie oft jeder Buchstabe im Text vorkommt (case-insensitive)."""
-    pass
-
+    count = {}
+    for c in text.lower():
+        if c.isalpha():
+            count[c] = count.get(c, 0) + 1
+    return count
 
 # Zugewiesen: Kenan999
 def aufgabe_041_group_by_length(worte: list[str]) -> dict[int, list[str]]:
