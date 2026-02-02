@@ -266,61 +266,91 @@ def aufgabe_040_count_letters(text: str) -> dict[str, int]:
 # Zugewiesen: Kenan999
 def aufgabe_041_group_by_length(worte: list[str]) -> dict[int, list[str]]:
     """Gruppiere Wörter nach ihrer Länge."""
-    pass
+    my_dict={}
+    for wort in worte:
+        my_dict = {}
+        for wort in worte:
+            my_dict.setdefault(len(wort), []).append(wort)
+    print (my_dict)
+    return my_dict
+
 
 
 # Zugewiesen: Kenan999
 def aufgabe_042_word_frequency(worte: list[str]) -> dict[str, int]:
     """Erstelle eine Häufigkeitstabelle für Wörter."""
-    pass
+    my_dict = {}
+    for wort in worte:
+        if wort in my_dict:
+            my_dict[wort] += 1
+        else:
+            my_dict[wort] = 1
+    return my_dict
 
 
 # Zugewiesen: Kenan999
 def aufgabe_043_dict_without_keys(data: dict[str, int], keys: list[str]) -> dict[str, int]:
     """Gib ein neues Dict ohne die angegebenen Schlüssel zurück."""
-    pass
+    return {k: v for k, v in data.items() if k not in keys}
+
 
 
 # Zugewiesen: Kenan999
 def aufgabe_044_find_key_by_value(data: dict[str, int], value: int) -> Optional[str]:
     """Finde den ersten Schlüssel, dessen Wert value entspricht."""
-    pass
+    for k, v in data.items():
+        if v == value:
+            return k
+    return None
+
 
 
 # Zugewiesen: Kenan999
 def aufgabe_045_safe_get(data: dict[str, Any], path: list[str]) -> Optional[Any]:
     """Greife sicher auf verschachtelte Dicts zu, None wenn Pfad fehlt."""
-    pass
+    current = data
+    for key in path:
+        if not isinstance(current, dict) or key not in current:
+            return None
+        current = current[key]
+    return current
+
 
 
 # Zugewiesen: Kenan999
 def aufgabe_046_set_union(a: set[int], b: set[int]) -> set[int]:
     """Vereinigung zweier Sets zurückgeben."""
-    pass
+    return a | b
 
 
 # Zugewiesen: Kenan999
 def aufgabe_047_set_intersection(a: set[int], b: set[int]) -> set[int]:
     """Schnittmenge zweier Sets zurückgeben."""
-    pass
+    return a & b
 
 
 # Zugewiesen: Kenan999
 def aufgabe_048_set_difference(a: set[int], b: set[int]) -> set[int]:
     """Differenzmenge a - b zurückgeben."""
-    pass
+    return a - b
 
 
 # Zugewiesen: Kenan999
 def aufgabe_049_remove_duplicates_preserve_order(werte: list[str]) -> list[str]:
     """Entferne doppelte Einträge aus einer Stringliste, Reihenfolge behalten."""
-    pass
+    seen = set()
+    result = []
+    for w in werte:
+        if w not in seen:
+            seen.add(w)
+            result.append(w)
+    return result
 
 
 # Zugewiesen: Kenan999
 def aufgabe_050_has_duplicates(werte: list[Any]) -> bool:
     """Prüfe, ob die Liste doppelte Elemente enthält."""
-    pass
+    return len(werte) != len(set(werte))
 
 
 # Zugewiesen: lgoik90-progfrog
